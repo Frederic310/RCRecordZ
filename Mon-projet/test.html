@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mon site SPA</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    nav a { margin: 10px; cursor: pointer; color: blue; text-decoration: underline; }
+    section { display: none; padding: 20px; }
+    section.active { display: block; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a onclick="showPage('home')">Accueil</a>
+    <a onclick="showPage('actu')">Actualités</a>
+    <a onclick="showPage('contact')">Contact</a>
+  </nav>
+
+  <section id="home" class="active">
+    <h1>Bienvenue sur mon site</h1>
+    <p>Ceci est la page d'accueil.</p>
+  </section>
+
+  <section id="actu">
+    <h1>Actualités</h1>
+    <p>Ici, les dernières infos...</p>
+  </section>
+
+  <section id="contact">
+    <h1>Contact</h1>
+    <p>Envoyez-moi un message !</p>
+  </section>
+
+  <script>
+    function showPage(pageId) {
+      // Cacher toutes les sections
+      document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+      // Afficher seulement celle cliquée
+      document.getElementById(pageId).classList.add("active");
+    }
+  </script>
+</body>
+</html>

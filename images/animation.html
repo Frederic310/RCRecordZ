@@ -1,0 +1,19 @@
+<!-- index.html -->
+<body>
+  <main>
+    <h1>Page d'accueil</h1>
+    <p>Contenu de la page...</p>
+  </main>
+
+  <div id="footer"></div>
+
+  <script>
+    async function loadSection(id, file) {
+      const el = document.getElementById(id)
+      const res = await fetch(file)
+      el.innerHTML = await res.text()
+    }
+    loadSection("header", "/index.html")
+    loadSection("footer", "/index.html")
+  </script>
+</body>
